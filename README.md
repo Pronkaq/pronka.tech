@@ -1,2 +1,0 @@
-# pronka.tech
-# pronka.tech
