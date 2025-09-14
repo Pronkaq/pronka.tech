@@ -55,11 +55,11 @@ jobs:
       - name: Deploy ov SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{  secrets.SSH_HOST  }}
-          username:  ${{  secrets.SSH_USER  }}
-          key: ${{  secrets.SSH_KEY  }}
-          script: |
-             cd /opt/pronka.tech
-             docker compose pull
-             docker compose up -d 
-           docker image prune -f
+           host: ${{  secrets.SSH_HOST  }}
+           username:  ${{  secrets.SSH_USER  }}
+           key: ${{  secrets.SSH_KEY  }}
+           script: |
+              cd /opt/pronka.tech
+              docker compose pull
+              docker compose up -d 
+              docker image prune -f
