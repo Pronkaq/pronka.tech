@@ -1,0 +1,4 @@
+pronka.tech, www.pronka.tech {
+    encode gzip
+    reverse_proxy web:80
+}
