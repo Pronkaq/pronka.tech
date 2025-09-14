@@ -52,6 +52,18 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Check repo
+        uses: actions/checkout@v4
+
+      - name: Upload configs
+        uses: appleboy/scp-action@v0.1.7
+        with:
+           host: ${{  secrets.SSH_HOST  }}
+           username:  ${{  secrets.SSH_USER  }}
+           key: ${{  secrets.SSH_KEY  }}
+           source: "docker-compose.yml,Caddyfile"
+           target: "/opt/pronka.tech/"
+
       - name: Deploy ov SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
